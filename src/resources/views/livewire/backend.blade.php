@@ -7,16 +7,16 @@
         ['name' => $mode]
     ];
     @endphp
-    <x-admin.widget.breadcrumb :breadcrumbs="$breadcrumbs" />
+    <x-admin.atoms.breadcrumb :breadcrumbs="$breadcrumbs" />
 
     <div class="relative mt-4">
         <x-admin.atoms.required />
 
         <div class="mt-2" wire:ignore>
-            <x-admin.widget.row>
+            <x-admin.atoms.row>
                 <div class="flex">
                     <div class="w-40">
-                        <x-admin.widget.select id="vertical_align" class="appearance-none rounded-lg border-gray-300">
+                        <x-admin.atoms.select id="vertical_align" class="appearance-none rounded-lg border-gray-300">
                             <option
                                 value="top-10"
                                 @if ($collection->vertical_align == "top-10") selected @endif
@@ -35,10 +35,10 @@
                             >
                                 Bottom
                             </option>
-                        </x-admin.widget.select>
+                        </x-admin.atoms.select>
                     </div>
                     <div class="w-40 ml-4">
-                        <x-admin.widget.select id="column" class="appearance-none rounded-lg border-gray-300">
+                        <x-admin.atoms.select id="column" class="appearance-none rounded-lg border-gray-300">
                             <option
                                 value="lg:w-1/2"
                                 @if ($collection->column == "lg:w-1/2") selected @endif
@@ -63,7 +63,7 @@
                             >
                                 Full
                             </option>
-                        </x-admin.widget.select>
+                        </x-admin.atoms.select>
                     </div>
                     <div class="ml-4 flex">
                         <input
@@ -74,14 +74,14 @@
                         />
                     </div>
                 </div>
-            </x-admin.widget.row>
+            </x-admin.atoms.row>
             
-            <x-admin.widget.row>
+            <x-admin.atoms.row>
                 <x-admin.atoms.label for="title" class="required">
                     Title
                 </x-admin.atoms.label>
                 <x-admin.atoms.text name="title" id="title" value="{{ $title }}" />
-            </x-admin.widget.row>
+            </x-admin.atoms.row>
         </div>
 
         <div>
@@ -101,14 +101,14 @@
         
         <hr class="my-10">
 
-        <x-admin.widget.button-group>
-            <x-admin.widget.link href="{{ url()->previous() }}">
+        <div class="text-right">
+            <x-admin.atoms.link href="{{ url()->previous() }}">
                 Back
-            </x-admin.widget.link>
-            <x-admin.widget.button id="save">
+            </x-admin.atoms.link>
+            <x-admin.atoms.button id="save">
                 Save
-            </x-admin.widget.button>
-        </x-admin.widget.button-group>
+            </x-admin.atoms.button>
+        </div>
     </div>
 </div>
 
